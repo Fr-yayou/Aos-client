@@ -62,7 +62,7 @@ describe('P text Error', () => {
     await page.click('.btnLogin')
     await page.waitForSelector('.emailNotFound')
     const html = await page.$eval('.emailNotFound', e => e.innerHTML);
-    expect(html).toBe('Email not found');
+    expect(html).toBe('E-mail saisie incorrect');
 
 
 

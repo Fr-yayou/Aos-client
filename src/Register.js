@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {Link} from 'react-router-dom'
 import SucessPage from './SucessPage'
 import styled from 'styled-components'
+import {AlertStyled,ButtonContainer} from './Login'
 
 class Register extends Component{
     constructor(){
@@ -52,32 +53,32 @@ class Register extends Component{
             <div>
                 {this.state.showLogin ? <SucessPage/>:
                 <ContainerFormRegister>
-                    <ContainerTittle>
+                    <ContainerTitle>
                         <h1>S'inscrire</h1>
-                    </ContainerTittle>
-                <Link to='/'>Home</Link>
+                    </ContainerTitle>
+                <Link to='/'>Page d'acceuil</Link>
                 <form onSubmit={this.onSubmit} className="contactForm">
-                    <NameRegister>
+                    <ContainerGroup>
                         <label>Nom</label>
-                        {this.state.nameErr ? <p className="nameErr">{this.state.nameErr}</p>:null}
-                        <input  onChange={this.onChange} value={this.state.name} type="text" id="name"></input>
-                    </NameRegister>
-                    <EmailRegister>
+                        {this.state.nameErr ? <AlertStyled className="nameErr">{this.state.nameErr}</AlertStyled>:null}
+                        <Input  onChange={this.onChange} value={this.state.name} type="text" id="name"></Input>
+                    </ContainerGroup>
+                    <ContainerGroup>
                         <label>Adresse e-mail</label>
-                        {this.state.emailErr? <p className="emailErr">{this.state.emailErr}</p>:null}
-                        <input  onChange={this.onChange} value={this.state.email} type="text" id="email"></input>
-                    </EmailRegister>
-                    <PasswordRegsiter>
+                        {this.state.emailErr? <AlertStyled className="emailErr">{this.state.emailErr}</AlertStyled>:null}
+                        <Input  onChange={this.onChange} value={this.state.email} type="text" id="email"></Input>
+                    </ContainerGroup>
+                    <ContainerGroup>
                         <label>Mot de passe</label>
-                        {this.state.passwordErr?<p>{this.state.passwordErr}</p>:null}
-                        <input  onChange={this.onChange} value={this.state.password} type="password" id="password"></input>
-                    </PasswordRegsiter>
-                    <Password2Register>
+                        {this.state.passwordErr?<AlertStyled>{this.state.passwordErr}</AlertStyled>:null}
+                        <Input onChange={this.onChange} value={this.state.password} type="password" id="password"></Input>
+                    </ContainerGroup>
+                    <ContainerGroup>
                         <label>Confirmation Mot de passe</label>
-                        {this.state.password2Err?<p>{this.state.password2Err}</p>:null}
-                        <input  onChange={this.onChange} value={this.state.password2} type="password" id="password2"></input>
-                    </Password2Register>
-                    <ButtonRegister><button className="btnRegister">S'inscrire</button></ButtonRegister>
+                        {this.state.password2Err?<AlertStyled>{this.state.password2Err}</AlertStyled>:null}
+                        <Input  onChange={this.onChange} value={this.state.password2} type="password" id="password2"></Input>
+                    </ContainerGroup>
+                    <ButtonContainer><Btn className="btnRegister">S'inscrire</Btn></ButtonContainer>
                 </form>
             </ContainerFormRegister>
             }
@@ -89,36 +90,42 @@ class Register extends Component{
 
 export default Register
 
-export const NameRegister =styled.div`
+export const ContainerGroup =styled.div`
 display:flex;
 flex-direction:column;
-margin-top:10px;
-`
-export const EmailRegister =styled.div`
-display:flex;
-flex-direction:column;
-margin-top:10px;
-`
-export const PasswordRegsiter =styled.div`
-display:flex;
-flex-direction:column;
-margin-top:10px;
-`
-export const Password2Register =styled.div`
-display:flex;
-flex-direction:column;
-margin-top:10px;
-`
-export const ButtonRegister = styled.div`
-display:flex;
-justify-content:center;
 margin-top:10px;
 `
 export const ContainerFormRegister = styled.div`
 margin-left:25%;
 margin-right:25%;
 `
-export const ContainerTittle = styled.div`
+export const ContainerTitle = styled.div`
 display:flex;
 justify-content:center;
+`
+
+export const Input = styled.input`
+border:1px solid #F1F1F1;
+padding: 10px 20px;
+border-radius: 10px;
+margin-top:5px;
+outline:none;
+background-color:#F1F1F1
+`
+export const Btn = styled.button`
+border-radius: 200px;
+border-style: solid;
+border-width: 1px;
+border-color: #e30513;
+font-weight: 700;
+height: 48px;
+padding:10px 20px;
+background-color:#e30513;
+color:white;
+width:40%;
+outline:none;
+&:hover{
+    background-color:white;
+    color:#e30513;
+}
 `
