@@ -64,7 +64,7 @@ class Login extends Component{
                                         <input id="password" type="password" onChange={this.onChange} value={this.state.password}></input>
                                     </PasswordLogin>
                                     <ButtonLogin>
-                                        <button>Sign In</button>
+                                        <button className="btnLogin">Sign In</button>
                                     </ButtonLogin>
                                 </form> 
                     </ContainerFornLogin>
