@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 
 
-
+//test login page sucess//
 describe('H1 Text', () => {
-  test('h1 loads correctly', async () => {
+  test('H1 loads correctly', async () => {
     let browser = await puppeteer.launch({
       headless: false
     });
@@ -35,3 +35,39 @@ describe('H1 Text', () => {
     browser.close();
   }, 16000);
 });
+
+//test login page  email error//
+describe('P text Error', () => {
+  test('Email not found', async () => {
+    let browser = await puppeteer.launch({
+      headless: false
+    });
+    let page = await browser.newPage();
+
+    page.emulate({
+      viewport: {
+        width: 500,
+        height: 2400
+      },
+      userAgent: ''
+    });
+    await page.goto('http://localhost:3000/login');
+    // await page.waitForSelector('#title');
+    // const html = await page.$eval('#title', e => e.innerHTML);
+    // expect(html).toBe('Register');
+    await page.click('input#email');
+    await page.type('input#email','yanis.bekhtaoi@gmail.com')
+    await page.click('input#password')
+    await page.type('input#password','123456')
+    await page.click('.btnLogin')
+    await page.waitForSelector('.emailNotFound')
+    const html = await page.$eval('.emailNotFound', e => e.innerHTML);
+    expect(html).toBe('Email not found');
+
+
+
+
+    browser.close();
+  }, 16000);
+});
+

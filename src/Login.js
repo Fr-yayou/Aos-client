@@ -55,7 +55,7 @@ class Login extends Component{
                                     <EmailLogin>
                                         <label>Email</label>
                                         {this.state.loginErrors.email ? <p>{this.state.loginErrors.email}</p>:null}
-                                        {this.state.loginErrors.emailnotfound ?<p>{this.state.loginErrors.emailnotfound}</p>:null}
+                                        {this.state.loginErrors.emailnotfound ?<p className="emailNotFound">{this.state.loginErrors.emailnotfound}</p>:null}
                                         <input id="email" type="email" onChange={this.onChange} value={this.state.email}></input>
                                     </EmailLogin>
                                     <PasswordLogin>
