@@ -90,6 +90,8 @@ class Register extends Component{
 
 export default Register
 
+//styled-component//
+
 export const ContainerGroup =styled.div`
 display:flex;
 flex-direction:column;

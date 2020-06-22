@@ -78,6 +78,8 @@ class Login extends Component{
 
 export default Login
 
+//styled-component//
+
 export const ContainerFornLogin = styled.div`
 margin-left:25%;
 margin-right:25%;
