@@ -56,15 +56,15 @@ class Register extends Component{
                         <h1>Register</h1>
                     </ContainerTittle>
                 <Link to='/'>Back Home</Link>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit} className="contactForm">
                     <NameRegister>
                         <label>Name</label>
-                        {this.state.nameErr ? <p>{this.state.nameErr}</p>:null}
+                        {this.state.nameErr ? <p className="nameErr">{this.state.nameErr}</p>:null}
                         <input  onChange={this.onChange} value={this.state.name} type="text" id="name"></input>
                     </NameRegister>
                     <EmailRegister>
                         <label>Email</label>
-                        {this.state.emailErr? <p>{this.state.emailErr}</p>:null}
+                        {this.state.emailErr? <p className="emailErr">{this.state.emailErr}</p>:null}
                         <input  onChange={this.onChange} value={this.state.email} type="text" id="email"></input>
                     </EmailRegister>
                     <PasswordRegsiter>
@@ -77,7 +77,7 @@ class Register extends Component{
                         {this.state.password2Err?<p>{this.state.password2Err}</p>:null}
                         <input  onChange={this.onChange} value={this.state.password2} type="password" id="password2"></input>
                     </Password2Register>
-                    <ButtonRegister><button>Sign up</button></ButtonRegister>
+                    <ButtonRegister><button className="btnRegister">Sign up</button></ButtonRegister>
                 </form>
             </ContainerFormRegister>
             }
