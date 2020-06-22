@@ -49,22 +49,22 @@ class Login extends Component{
             <div>
                 {this.state.showSucessPage ?<SucessPage/> :
                     <ContainerFornLogin>
-                        <h1 id="title">Login</h1>
-                                <Link to='/'> Back Home</Link>
+                        <h1 id="title">Se connecter</h1>
+                                <Link to='/'>Page d'acceuil </Link>
                                 <form onSubmit={this.onSubmit}>
                                     <EmailLogin>
-                                        <label>Email</label>
+                                        <label>Adresse e-mail</label>
                                         {this.state.loginErrors.email ? <p>{this.state.loginErrors.email}</p>:null}
                                         {this.state.loginErrors.emailnotfound ?<p className="emailNotFound">{this.state.loginErrors.emailnotfound}</p>:null}
                                         <input id="email" type="email" onChange={this.onChange} value={this.state.email}></input>
                                     </EmailLogin>
                                     <PasswordLogin>
-                                        <label>Password</label>
+                                        <label>Mot de passe</label>
                                         {this.state.loginErrors.passwordincorrect ? <p>{this.state.loginErrors.passwordincorrect}</p>:null}
                                         <input id="password" type="password" onChange={this.onChange} value={this.state.password}></input>
                                     </PasswordLogin>
                                     <ButtonLogin>
-                                        <button className="btnLogin">Sign In</button>
+                                        <button className="btnLogin">Validez</button>
                                     </ButtonLogin>
                                 </form> 
                     </ContainerFornLogin>

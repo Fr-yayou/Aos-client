@@ -53,31 +53,31 @@ class Register extends Component{
                 {this.state.showLogin ? <SucessPage/>:
                 <ContainerFormRegister>
                     <ContainerTittle>
-                        <h1>Register</h1>
+                        <h1>S'inscrire</h1>
                     </ContainerTittle>
-                <Link to='/'>Back Home</Link>
+                <Link to='/'>Home</Link>
                 <form onSubmit={this.onSubmit} className="contactForm">
                     <NameRegister>
-                        <label>Name</label>
+                        <label>Nom</label>
                         {this.state.nameErr ? <p className="nameErr">{this.state.nameErr}</p>:null}
                         <input  onChange={this.onChange} value={this.state.name} type="text" id="name"></input>
                     </NameRegister>
                     <EmailRegister>
-                        <label>Email</label>
+                        <label>Adresse e-mail</label>
                         {this.state.emailErr? <p className="emailErr">{this.state.emailErr}</p>:null}
                         <input  onChange={this.onChange} value={this.state.email} type="text" id="email"></input>
                     </EmailRegister>
                     <PasswordRegsiter>
-                        <label>Password</label>
+                        <label>Mot de passe</label>
                         {this.state.passwordErr?<p>{this.state.passwordErr}</p>:null}
                         <input  onChange={this.onChange} value={this.state.password} type="password" id="password"></input>
                     </PasswordRegsiter>
                     <Password2Register>
-                        <label>Confirm password</label>
+                        <label>Confirmation Mot de passe</label>
                         {this.state.password2Err?<p>{this.state.password2Err}</p>:null}
                         <input  onChange={this.onChange} value={this.state.password2} type="password" id="password2"></input>
                     </Password2Register>
-                    <ButtonRegister><button className="btnRegister">Sign up</button></ButtonRegister>
+                    <ButtonRegister><button className="btnRegister">S'inscrire</button></ButtonRegister>
                 </form>
             </ContainerFormRegister>
             }
